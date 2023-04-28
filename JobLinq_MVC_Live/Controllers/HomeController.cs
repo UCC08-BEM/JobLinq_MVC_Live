@@ -1,4 +1,4 @@
-﻿using JobLinq_MVC.Models;
+﻿using JobLinq_MVC_Live.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
