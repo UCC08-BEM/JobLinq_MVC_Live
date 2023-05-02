@@ -1,0 +1,19 @@
+﻿@model JobLinq_MVC_Live.ViewModels.LoginVM // Ara model
+
+<h1>Kullanıcı Giriş</h1>
+
+<form method="post" asp-action="Login" class="mt-5">
+    <div class="mb-3">
+        <label class="form-label">E-Mail</label>
+        <input type="email" class="form-control" asp-for="UserEmail" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" asp-for="UserPassword" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Giriş</button>
+
+
+</form>

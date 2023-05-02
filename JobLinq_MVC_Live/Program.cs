@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 // DB baðlantýsý için - appsettings.json dosyasý altýndaki Connection tanýmý için
 builder.Services.AddDbContext<DBJobLinqContext>(Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
-var app = builder.Build();
+var app = builder.Build(); //Uygulamanýn yaratýldýðý kýsým
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

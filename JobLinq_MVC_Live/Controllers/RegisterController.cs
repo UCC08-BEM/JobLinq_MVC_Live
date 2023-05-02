@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JobLinq_MVC_Live.Models;
+using JobLinq_MVC_Live.ViewModels;
 
 namespace JobLinq_MVC_Live.Controllers
 {
@@ -19,14 +20,14 @@ namespace JobLinq_MVC_Live.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(User user) {
+        public IActionResult Register(RegisterVM  register) {
 
             // View tarafında girilen bilgilerin VT tarafına atanması
             var data = new User()
             {
-                UserEmail = user.UserEmail,
-                UserPassword = user.UserPassword,
-                UserType = user.UserType
+                UserEmail = register.UserEmail,
+                UserPassword = register.UserPassword,
+                UserType = register.UserType
             };
 
             // Verilerin DB ye yazılması
