@@ -23,7 +23,7 @@ namespace JobLinq_MVC_Live.Controllers
         [HttpPost]
         public IActionResult Login(LoginVM login)
         {
-            var user = DBJobLinqContext.Users.Where(u => u.UserEmail == login.UserEmail);
+            var user = DBJobLinqContext.Users.Where(u => u.UserEmail == login.UserEmail); // linq
             // db tarafındaki tabloda ekrandan girilen email adresi ile ilgili bir kayıt varmı?
 
             if (user.Any()) // email bilgisi uyan herhangi bir kayıt bulduysan  
