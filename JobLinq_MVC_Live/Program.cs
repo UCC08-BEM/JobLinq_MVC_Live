@@ -1,7 +1,13 @@
+using JobLinq_MVC_Live.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// DB baðlantýsý için - appsettings.json dosyasý altýndaki Connection tanýmý için
+builder.Services.AddDbContext<DBJobLinqContext>(Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
 var app = builder.Build();
 
