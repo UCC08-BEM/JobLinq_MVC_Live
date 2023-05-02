@@ -10,7 +10,7 @@ namespace JobLinq_MVC_Live.Models
 
         [DisplayName("Şirket ID")] // db deki tablo alanının ne gibi görünmesini istiyorsak.(Display Name Attribute ile düzenleyebiliyoruz.
         public int? CompanyId { get; set; }
-        [DisplayName("İlan Başlığı")]
+        [DisplayName("İlan Başlığı")] 
         public string? AdvertTitle { get; set; }
         [DisplayName("İlan Detayı")]
         public string? AdvertDetail { get; set; }
