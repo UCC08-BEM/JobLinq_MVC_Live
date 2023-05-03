@@ -21,7 +21,7 @@ namespace JobLinq_MVC_Live.Controllers
         // GET: Candidates
         public async Task<IActionResult> Index()
         {
-
+            // ?? : Databeseden gelen CityID ye göre ekrandaki tablo içeriğinde CityID olarak görülen yere CityName değerinin gelmesi
 
 
             return _context.Candidates != null ? 
