@@ -25,5 +25,7 @@ namespace JobLinq_MVC_Live.Models
         
         [DisplayName("Telefon No")]
         public string? Gsmno { get; set; }
+
+        public City City { get; set; }
     }
 }

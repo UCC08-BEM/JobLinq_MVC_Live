@@ -13,7 +13,10 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Kullanıcı Tipi</label>
-        <input type="text" class="form-control" asp-for="UserType" />
+        <select class="form-select" asp-for="UserType" asp-items="ViewBag.usertype">
+            <option value="">--- Kullanıcı tipi seçiniz ---</option>
+
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Kaydet</button>

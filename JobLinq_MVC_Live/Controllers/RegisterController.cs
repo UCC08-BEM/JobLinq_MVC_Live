@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JobLinq_MVC_Live.Models;
 using JobLinq_MVC_Live.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace JobLinq_MVC_Live.Controllers
 {
@@ -8,7 +9,7 @@ namespace JobLinq_MVC_Live.Controllers
     {
         public RegisterController(DBJobLinqContext dBJobLinqContext)
         {
-            DBJobLinqContext=dBJobLinqContext;
+            DBJobLinqContext = dBJobLinqContext;
         }
 
         public DBJobLinqContext DBJobLinqContext { get; } // dbcontext sınıfını bir değişgen olarak tanımlamak gerekiyor.
@@ -16,11 +17,19 @@ namespace JobLinq_MVC_Live.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            ViewBag.usertype = new SelectList(new List<UserType>()
+                                {  new() { Data="K",Value="Kullanıcı" },
+                                   new() { Data="S",Value="Şirket"}
+                                }, "Data", "Value");
+
+
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterVM  register) {
+        public IActionResult Register(RegisterVM register)
+        {
 
             // View tarafında girilen bilgilerin VT tarafına atanması
             var data = new User()

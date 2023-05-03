@@ -65,10 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\about.html" />
     <None Include="wwwroot\blog.html" />
     <None Include="wwwroot\contact.html" />

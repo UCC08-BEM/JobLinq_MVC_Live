@@ -47,6 +47,16 @@ namespace JobLinq_MVC_Live.Controllers
         // GET: Companies/Create
         public IActionResult Create()
         {
+            List<SelectListItem> citylist = (from cl in _context.Cities.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Value = cl.CityId.ToString(),
+                                                 Text = cl.CityName
+                                             }
+                               ).OrderBy(i => i.Text).ToList();
+
+            ViewBag.citylist = citylist;
+
             return View();
         }
 

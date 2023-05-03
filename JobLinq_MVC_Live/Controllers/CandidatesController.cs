@@ -21,7 +21,10 @@ namespace JobLinq_MVC_Live.Controllers
         // GET: Candidates
         public async Task<IActionResult> Index()
         {
-              return _context.Candidates != null ? 
+
+
+
+            return _context.Candidates != null ? 
                           View(await _context.Candidates.ToListAsync()) :
                           Problem("Entity set 'DBJobLinqContext.Candidates'  is null.");
         }
@@ -47,6 +50,28 @@ namespace JobLinq_MVC_Live.Controllers
         // GET: Candidates/Create
         public IActionResult Create()
         {
+            // Database tarafında bulunan City tablosundaki verilerin çekilmesi
+
+            List<SelectListItem> citylist=(from cl in _context.Cities.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Value=cl.CityId.ToString(),
+                                               Text=cl.CityName
+                                           }
+                                           ).OrderBy(i=> i.Text).ToList();
+
+            ViewBag.citylist= citylist;
+
+
+
+            // Manuel olarak view sayfasında gözükmesini istediğim City listesi oluşturuluyor.
+            //ViewBag.citylist = new SelectList(new List<CityList>()
+            //                    {  new() { Data=1,Value="İstanbul" },
+            //                       new() { Data=2,Value="Ankara"},
+            //                       new() { Data=3,Value="İzmir"},
+            //                       new() { Data=4,Value="Bursa"}
+            //                    }, "Data", "Value");
+
             return View();
         }
 
@@ -59,6 +84,7 @@ namespace JobLinq_MVC_Live.Controllers
         {
             if (ModelState.IsValid)
             {
+                //candidate.BirthDate = candidate.BirthDate.ToShortDateTime();
                 _context.Add(candidate);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
