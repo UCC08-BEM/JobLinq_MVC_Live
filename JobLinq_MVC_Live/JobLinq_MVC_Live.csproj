@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\about.html" />
+    <Content Remove="wwwroot\blog.html" />
+    <Content Remove="wwwroot\contact.html" />
+    <Content Remove="wwwroot\elements.html" />
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\job_details.html" />
+    <Content Remove="wwwroot\job_listing.html" />
+    <Content Remove="wwwroot\main.html" />
+    <Content Remove="wwwroot\single-blog.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
       <PrivateAssets>all</PrivateAssets>
@@ -54,6 +66,18 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\about.html" />
+    <None Include="wwwroot\blog.html" />
+    <None Include="wwwroot\contact.html" />
+    <None Include="wwwroot\elements.html" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\job_details.html" />
+    <None Include="wwwroot\job_listing.html" />
+    <None Include="wwwroot\main.html" />
+    <None Include="wwwroot\single-blog.html" />
   </ItemGroup>
 
 </Project>
